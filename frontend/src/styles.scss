@@ -1,0 +1,97 @@
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Bouton orange pour "Organiser un examen" */
+.mat-raised-button.organize-exam {
+  background-color: #fb8c00;
+  color: white;
+  font-weight: 600;
+}
+
+.mat-raised-button.organize-exam:hover {
+  background-color: #ef6c00;
+}
+
+/* Table */
+.exam-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.exam-table th,
+.exam-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.exam-table th {
+  background-color: #fafafa;
+  font-weight: 600;
+}
+
+/* Statuts avec codes couleurs */
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.status.confirmed {
+  background-color: #c8e6c9;
+  color: #256029;
+}
+
+.status.to_organize {
+  background-color: #fff9c4;
+  color: #9e8500;
+}
+
+.status.cancelled {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.status.searching {
+  background-color: #bbdefb;
+  color: #0d47a1;
+}
+
+/* Form */
+form.exam-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+form.exam-form mat-form-field {
+  width: 100%;
+}
+
+form.exam-form button[type="submit"] {
+  align-self: flex-start;
+}

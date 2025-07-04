@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>Liste des examens</span>
+</mat-toolbar>
+
+<div class="container">
+  <button mat-raised-button class="organize-exam" routerLink="/add-exam">
+    Organiser un examen
+  </button>
+
+  <div *ngIf="exams.length > 0; else noExams">
+    <mat-card class="exam-card" *ngFor="let exam of exams">
+      <mat-card-title>
+        {{ exam.student.first_name }} {{ exam.student.last_name }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        Le {{ exam.date }} à {{ exam.time }} – {{ exam.meeting_point }}
+      </mat-card-subtitle>
+      <mat-chip color="primary" class="status" [ngClass]="exam.status">
+        {{ exam.status }}
+      </mat-chip>
+    </mat-card>
+  </div>
+
+  <ng-template #noExams>
+    <p>Aucun examen pour le moment.</p>
+  </ng-template>
+</div>
